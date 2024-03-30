@@ -1,4 +1,6 @@
 import express from 'express';
+import dotenv from 'dotenv/config';
+
 
 import itemsRoutes from "./routers/items.routes.js";
 import organizationRoutes from "./routers/organization.routes.js";
@@ -6,7 +8,7 @@ import pricingRoutes from "./routers/pricing.routes.js";
 
 const app = express();
 
-
+app.use(dotenv());
 app.use(express.json());
 app.use("/items",itemsRoutes);
 app.use("/organization",organizationRoutes);
